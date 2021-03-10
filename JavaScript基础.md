@@ -62,7 +62,7 @@ function testEqual(val) {
 
 testEqual(12); //括号里的值与if后条件匹配，看是True还是Flase
 
-/* 满足多个条件例子，用`&&`连接 */
+/* 满足多个条件，用`&&`连接 */
 function testLogicalAnd(val) {
   if (val <= 50 && val >= 25) {
       return "Yes";
@@ -72,7 +72,7 @@ function testLogicalAnd(val) {
 
 testLogicalAnd(10); //Returns No
 
-/* 多个条件，用`||`连接 */
+/* 多个条件满足其一，用`||`连接 */
 function testLogicalOr(val) {
   if (val >20 || val< 10) {
     return "Outside";
