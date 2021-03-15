@@ -2,27 +2,18 @@
 
 JS是一种脚本语言，用于页面交互以及动态样式，适配于所有现在的浏览器。
 
-
-
 ## 杂
 
 - 注释
 
   - `//`  单行注释
   - `/*  */` 多行注释
-
-  
-
 - 检验数据类型
 
   ```js
   typeof 3   // returns 'number'
   typeof '3' // returns 'string'
   ```
-
-  
-
-  
 
 ## JS 八种数据类型
 
@@ -32,7 +23,7 @@ JS是一种脚本语言，用于页面交互以及动态样式，适配于所有
 
 ### boolean  布尔值
 
-布尔值只有两个值，分别是`true`和`false`
+布尔值只有两个值，分别是 `true`和 `false`
 
 **1. if 条件**
 
@@ -104,8 +95,6 @@ if (num > 15) {
 }
 ```
 
-
-
 **1.2 结果优先级**
 
 代码是从上往下运行的，会优先运行行数在上的结果。
@@ -135,28 +124,20 @@ foo(0) // "Less than one"
 bar(0) // "Less than two"
 ```
 
-
-
-
-
-
-
 **2. 不同数据对比**
 
 `==` 相等，`!=` 不相等，`>`大于，`>=`大于等于，`<` 小于，`<=`小于等于，不同数据类型可以转换
 
- `===` 严格相等，`!===` 严格不相等，数据类型需要一样
+`===` 严格相等，`!===` 严格不相等，数据类型需要一样
 
-| 代码       | 对错  |
-| ---------- | ----- |
-| 1   ==  1  | True  |
-| 1   ==  2  | False |
-| 1   == '1' | True  |
-| "3" ==  3  | True  |
-| 3 ===  3   | True  |
-| 3 === '3'  | False |
-
-
+| 代码 | 对错 |
+| - | - |
+| 1   ==  1 | True |
+| 1   ==  2 | False |
+| 1   == '1' | True |
+| "3" ==  3 | True |
+| 3 ===  3 | True |
+| 3 === '3' | False |
 
 ### string  字符串
 
@@ -164,17 +145,11 @@ bar(0) // "Less than two"
 
 ### BigInt  比2<sup>53</sup> -1 大的数值
 
-
-
-
-
 ### number  数值
-
-
 
 ### object 对象
 
-  用于以结构化的方式储存数据，数据可以是真实世界的实物，例如猫。通常可以用属性`properties` 来访问这个数据。
+用于以结构化的方式储存数据，数据可以是真实世界的实物，例如猫。通常可以用属性 `properties` 来访问这个数据。
 
 ```js
 var cat = {
@@ -193,7 +168,7 @@ var anotherObject = {
 
 **1. 访问对象property**
 
-- 两种方式，`.` 和 `[]`
+- 两种方式，`.` 和`[]`
 
 ```js
 /* 圆点用于当你知道这个对象的property名字时 */
@@ -252,10 +227,6 @@ ourDog.bark = "bow-wow";  // 新增属性
 delete ourDog.friends; // 减去属性
 ```
 
-
-
-
-
 ## 句法
 
 乱七八糟各种句法
@@ -264,11 +235,11 @@ delete ourDog.friends; // 减去属性
 
 `switch`
 
-是一种条件语句，跟`if` `else` 有些相似。针对多种可能的情况评估表达式，并根据匹配的情况执行代码块。
+是一种条件语句，跟 `if` `else` 有些相似。针对多种可能的情况评估表达式，并根据匹配的情况执行代码块。
 
-- `case` 后面的值匹配的时候需要绝对相等 `===`
+- `case` 后面的值匹配的时候需要绝对相等`===`
 - `break` 是告诉JS此句已终止，如果没有`break`，会执行下一句
-- 比`if`  `else` 写起来要简洁
+- 比`ifelse` 写起来要简洁
 
 ```js
 function caseInSwitch(val) {
@@ -319,17 +290,11 @@ function sequentialSizes(val) {
 sequentialSizes(1);
 ```
 
-
-
-
-
-
-
 ## 赋值
 
-  `variable`
+`variable`
 
-  命名可用数字，字母，`$`, `_` 命名，不可包含空格或用数字开头，命名区分大小写。建议的命名方式 `camelCase`，即第一个单词首字母小写，之后的单词首字母皆大写。
+命名可用数字，字母，`$`, `_` 命名，不可包含空格或用数字开头，命名区分大小写。建议的命名方式 `camelCase`，即第一个单词首字母小写，之后的单词首字母皆大写。
 
 ```js
 var myVar;
@@ -346,8 +311,6 @@ var myArray = ["Katelyn", 25];
 //多个方括号, 括号内外都要逗号隔开
 var myArray = [["Katelyn", 25], ["Kate", 30]];
 ```
-
-
 
 **1.1 多值内索引**
 
@@ -371,8 +334,6 @@ arr[3][0]; // equals [10,11,12]
 arr[3][0][1]; // equals 11
 ```
 
-
-
 **1.2 修改变量里的值**
 
 `变量名[N] =`
@@ -381,8 +342,6 @@ arr[3][0][1]; // equals 11
 var ourArray = [50,40,30];
 ourArray[0] = 15; // equals [15,40,30]
 ```
-
-
 
 **1.3 多值变量开始及结尾加值**
 
@@ -407,8 +366,6 @@ arr2.push(["happy", "joy"]);
 // arr2 now equals ["Stimpson", "J", "cat", ["happy", "joy"]
 ```
 
-
-
 **1.4 消除首值和尾值**
 
 `.shift()` 消除首值，新变量=消除的值，原变量=消除后的值
@@ -421,10 +378,6 @@ var oneDown = threeArr.pop();  //消除了6，并在下一行oneDown变量返还
 console.log(oneDown); // Returns 6
 console.log(threeArr); // Returns [1, 4], 被.pop消除了结尾值6
 ```
-
-
-
-
 
 ### 乱 赋值
 
@@ -439,25 +392,17 @@ var myList = [
     ["Chocolate Bar", 15], ["Milk",1], ["Bread", 1], ["Pear", 1], ["Stawberry", 2]];
 ```
 
-
-
-
-
-
-
 ### 数据类型赋值
 
 八种数据类型可能会被储存在变量里。
 
-| 数据类型  | 解释                                 | 例子                                             |
-| --------- | ------------------------------------ | ------------------------------------------------ |
-| `string`  | 字符串，需要引号括起来               | `let myVariable = 'Bob';`                        |
-| `number`  | 数字，不需要引号                     | `let myVariable = 10;`                           |
-| `boolean` | 布尔值，True/False value，不需要引号 | `let myVariable = true;`                         |
-| `array`   | 数据组，可以储存多个值               | `let myVariable = [1,'Bob','Steve',10];`         |
-| `object`  | 可以是任何东西                       | `let myVariable = document.querySelector('h1');` |
-
-
+| 数据类型 | 解释 | 例子 |
+| - | - | - |
+| `string` | 字符串，需要引号括起来 | `let myVariable = 'Bob';` |
+| `number` | 数字，不需要引号 | `let myVariable = 10;` |
+| `boolean` | 布尔值，True/False value，不需要引号 | `let myVariable = true;` |
+| `array` | 数据组，可以储存多个值 | `let myVariable = [1,'Bob','Steve',10];` |
+| `object` | 可以是任何东西 | `let myVariable = document.querySelector('h1');` |
 
 #### 数值赋值
 
@@ -472,33 +417,31 @@ var product = 8 * 10;
 var quotient = 66 / 33;
 ```
 
-
-
 **2. 快捷运算**
 
-| 代码   | 意思         |      |
-| ------ | ------------ | ---- |
-| `i++;` | `i = i + 1;` |      |
-| `i--;` | `i = i - 1;` |      |
-|        |              |      |
-
-
+| 代码 | 意思 |   |
+| - | - | - |
+| `i++;` | `i = i + 1;` |   |
+| `i--;` | `i = i - 1;` |   |
+|   |   |   |
 
 **3. 运算符号**
 
-| 符号 | 运算方式 | 例子         | 备注             |
-| ---- | -------- | ------------ | ---------------- |
-| %    | 余数     | `17 % 2` = 1 | 不适宜用在负数上 |
-|      |          |              |                  |
-|      |          |              |                  |
+| 符号 | 运算方式 | 例子 | 备注 |
+| - | - | - | - |
+| % | 余数 | `17 % 2` = 1 | 不适宜用在负数上 |
+|   |   |   |   |
+|   |   |   |   |
 
 > 17 - 2\*2*2\*2 = 1
 
-
-
 **4. 加减乘除复合赋值**
 
-​       `+=`   `-=`   `*=`   `/=`
+```
+
+```
+
+`+=`   `-=`   `*=`   `/=`
 
 ```js
 // 加法
@@ -510,8 +453,6 @@ var a = 5;
 a *= 5;
 console.log(a); // Returns 25
 ```
-
-
 
 #### 字符串赋值
 
@@ -530,17 +471,15 @@ var myLastName = "Lee"
   - 引号重复，避免字符串提前结束
 - 不同转义字符的意思
 
-| 字符 | 意思          | 备注 |
-| ---- | ------------- | ---- |
-| `\'` | 单引号        |      |
-| `\"` | 双引号        |      |
-| `\n` | 新的一行      |      |
-| `\r` | 回车          |      |
-| `\t` | tab           |      |
-| `\b` | word boundary |      |
-| `\f` | form feed     |      |
-
-
+| 字符 | 意思 | 备注 |
+| - | - | - |
+| `\'` | 单引号 |   |
+| `\"` | 双引号 |   |
+| `\n` | 新的一行 |   |
+| `\r` | 回车 |   |
+| `\t` | tab |   |
+| `\b` | word boundary |   |
+| `\f` | form feed |   |
 
 **2. 字符串连接**
 
@@ -566,8 +505,6 @@ ourStr += anAdjective;
 
 > 注意空格，需要自己加空格。
 
-
-
 **3. 计算字符串长度**
 
 `变量名.length`
@@ -578,11 +515,9 @@ var lastName = "Lovelace";
 lastNameLength = lastName.length;
 ```
 
-
-
 **4. 变量字符索引**
 
-`变量名[N]`       
+`变量名[N]`
 
 正数字符索引。数字是从0开始，第一个character实际上是0.
 
@@ -594,8 +529,6 @@ firstLetterOfLastName = lastName[0];
 // Returns "L"
 ```
 
-
-
 `变量名[变量名.length - N]`
 
 倒数字符索引。倒数第几位，N就是几。
@@ -606,8 +539,6 @@ var lastLetter = firstName[firstName.length - 1];
 // Returns "s"
 ```
 
-
-
 **5. 赋值改变**
 
 ```js
@@ -615,11 +546,7 @@ var myStr = "Bob";
 myStr = "Job";
 ```
 
-
-
 #### 布尔值赋值
-
-
 
 ## 函数
 
@@ -641,13 +568,11 @@ myFun();
 
 ```
 
-
-
 **1. 函数里的参数 argument**
 
 创建两个当占位符的参数，在赋予值 (*arguments*)
 
-- 占位符可以是数据类型的缩写，例如`arr`, `num`, `item`, `str`等
+- 占位符可以是数据类型的缩写，例如`arr`,`num`,`item`,`str`等
 
 ```Js
 function functionWithArgs(one, two) { // one和two是当占位符的参数
@@ -656,13 +581,10 @@ function functionWithArgs(one, two) { // one和two是当占位符的参数
 functionWithArgs(6, 16);  // 赋予两个值，一个6，一个16
 ```
 
-
-
 **2. 作用域 scope**
 
-- 在`function`外的变量，JS随处可见，称为 *Global scope*
-
-- 在`function`内的变量，只有在那个`function`里才能见，称为 *local scope*
+- 在`function`外的变量，JS随处可见，称为*Global scope*
+- 在`function`内的变量，只有在那个`function`里才能见，称为*local scope*
 
 ```js
 /* function内的变量 */
@@ -686,8 +608,6 @@ function myFun() {
 }
 ```
 
-
-
 **3. 返回值**
 
 `return`
@@ -706,8 +626,6 @@ function processArg(num) {
 
 processed = processArg(7); // 此行，用返回值赋值
 ```
-
-
 
 **4. 一连串的值 line**
 
@@ -729,8 +647,6 @@ console.log(nextInLine(testArr, 6));
 console.log("After: " + JSON.stringify(testArr));
 ```
 
-
-
 **5. 对比大小**
 
 ```js
@@ -742,31 +658,22 @@ isLess(10, 15);  //return true
 isLess(15, 10);  // return false
 ```
 
-
-
-
-
 ## Q&A
 
 1. 函数需要return，return后answer才有函数结果。
 2. `console log` 是给网页控制台输出信息的，类似`print`.  弹窗为`alert`.
-3. 
-
-
-
-
+3.
 
 ## 专业词汇
 
-| 单词        | 意思       | 备注 |
-| ----------- | ---------- | ---- |
-| remainder   | 余数       |      |
-| assignment  | 赋值       |      |
-| indentation | 缩进       |      |
-| scope       | 变量可见性 |      |
-|             |            |      |
-|             |            |      |
-|             |            |      |
-|             |            |      |
-|             |            |      |
-
+| 单词 | 意思 | 备注 |
+| - | - | - |
+| remainder | 余数 |   |
+| assignment | 赋值 |   |
+| indentation | 缩进 |   |
+| scope | 变量可见性 |   |
+|   |   |   |
+|   |   |   |
+|   |   |   |
+|   |   |   |
+|   |   |   |
