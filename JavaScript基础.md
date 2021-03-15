@@ -15,6 +15,8 @@ JS是一种脚本语言，用于页面交互以及动态样式，适配于所有
   typeof '3' // returns 'string'
   ```
 
+
+
 ## JS 八种数据类型
 
 ### undefined 未定义
@@ -227,6 +229,8 @@ ourDog.bark = "bow-wow";  // 新增属性
 delete ourDog.friends; // 减去属性
 ```
 
+
+
 ## 句法
 
 乱七八糟各种句法
@@ -289,6 +293,8 @@ function sequentialSizes(val) {
 
 sequentialSizes(1);
 ```
+
+
 
 ## 赋值
 
@@ -379,6 +385,8 @@ console.log(oneDown); // Returns 6
 console.log(threeArr); // Returns [1, 4], 被.pop消除了结尾值6
 ```
 
+
+
 ### 乱 赋值
 
 **1. Shopping List**
@@ -391,6 +399,8 @@ console.log(threeArr); // Returns [1, 4], 被.pop消除了结尾值6
 var myList = [
     ["Chocolate Bar", 15], ["Milk",1], ["Bread", 1], ["Pear", 1], ["Stawberry", 2]];
 ```
+
+
 
 ### 数据类型赋值
 
@@ -436,10 +446,6 @@ var quotient = 66 / 33;
 > 17 - 2\*2*2\*2 = 1
 
 **4. 加减乘除复合赋值**
-
-```
-
-```
 
 `+=`   `-=`   `*=`   `/=`
 
@@ -547,6 +553,8 @@ myStr = "Job";
 ```
 
 #### 布尔值赋值
+
+
 
 ## 函数
 
@@ -658,11 +666,15 @@ isLess(10, 15);  //return true
 isLess(15, 10);  // return false
 ```
 
+
+
 ## Q&A
 
 1. 函数需要return，return后answer才有函数结果。
 2. `console log` 是给网页控制台输出信息的，类似`print`.  弹窗为`alert`.
 3.
+
+
 
 ## 专业词汇
 
