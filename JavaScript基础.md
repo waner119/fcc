@@ -126,6 +126,8 @@ foo(0) // "Less than one"
 bar(0) // "Less than two"
 ```
 
+
+
 **2. 不同数据对比**
 
 `==` 相等，`!=` 不相等，`>`大于，`>=`大于等于，`<` 小于，`<=`小于等于，不同数据类型可以转换
@@ -171,23 +173,24 @@ var anotherObject = {
 **1. 访问对象property**
 
 - 两种方式，`.` 和`[]`
+- **一般都用方括号[ ]**
 
 ```js
-/* 圆点用于当你知道这个对象的property名字时 */
+/* 圆点一般不常用*/
 var myObj = {
   prop1: "val1",
   prop2: "val2"
 };
-var prop1val = myObj.prop1;
+var prop1val = myObj.prop1;   // 变量prop1val会有 "val1" 这个值
 var prop2val = myObj.prop2;
 
-/* []用于对象property名字里带有空格（引用时必须有引号），但也可以用于没有空格 */
+/* []用于对象property名字里带有空格（引用时必须有引号），但也可以用于没有空格，用的多 */
 var myObj = {
   "Space Name": "Kirk",
   "More Space": "Spock",
   "NoSpace": "USS Enterprise"
 };
-myObj["Space Name"];
+myObj["Space Name"];    //Returns "Kirk"
 myObj['More Space'];
 myObj["NoSpace"];
 
@@ -199,9 +202,52 @@ var myDog = "Hunter";
 var myBreed = dogs[myDog];  
 console.log(myBreed);  // 输出字符串Doberman
 
+/* 访问子属性 sub-property */
+var ourStorage = {
+  "desk": {
+    "drawer": "stapler"
+  },
+  "cabinet": {
+    "top drawer": { 
+      "folder1": "a file",
+      "folder2": "secrets"
+    },
+    "bottom drawer": "soda"
+  }
+};
+ourStorage["cabinet"]["top drawer"]["folder2"];  // returns “secrets” 
+ourStorage.desk.drawer;  // returns “stapler”
+// 建议都用方括号
+
+/* 访问嵌套数组 nested array */
+var ourPets = [
+  {
+    animalType: "cat",
+    names: [
+      "Meowzer",
+      "Fluffy",
+      "Kit-Cat"
+    ]
+  },
+  {
+    animalType: "dog",
+    names: [
+      "Spot",
+      "Bowser",
+      "Frankie"
+    ]
+  }
+]; 
+ourPets[0].names[1];  // returns "Fluffy"
+ourPets[1].names[0];  // returns "Spot"
+
 ```
 
-**2. 更改property的值**
+
+
+**2. 编辑对象里的属性和值**
+
+**2.1 更改property里的值**
 
 ```js
 var myDog = {
@@ -215,7 +261,9 @@ myDog.name = "Happy Coder";  // Coder 被改成了Happy Coder
 myDog["name"] = "Happy Coder"; // 这个跟上面的都可以
 ```
 
-**3. 增减property**
+**2.2 增减property**
+
+`delete`
 
 ```js
 var ourDog = {
@@ -228,6 +276,126 @@ var ourDog = {
 ourDog.bark = "bow-wow";  // 新增属性
 delete ourDog.friends; // 减去属性
 ```
+
+**3. 查找值**
+
+`lookup`
+
+```js
+function phoneticLookup(val) {
+  var result = "";
+
+  var lookup = {
+    "alpha": "Adams",
+    "bravo": "Boston",
+    "charlie": "Chicago",
+    "delta": "Denver",
+    "echo": "Easy",
+    "foxtrot": "Frank"
+  };
+ result = lookup[val]  // 运行查找值的命令行
+
+  return result;
+}
+
+phoneticLookup("charlie");
+```
+
+**3.1 查找是否有特定的property**
+
+`.hasOwnProperty()`
+
+```js
+/* 检测这个变量里是否有某个property */
+var myObj = {
+  top: "hat",
+  bottom: "pants"
+};
+myObj.hasOwnProperty("top");    // returns `true`
+myObj.hasOwnProperty("middle");  // returns `false`
+
+/* 在if里检验 */
+function checkObj(obj, checkProp) {
+
+  if(obj.hasOwnProperty(checkProp)) {
+    return obj[checkProp];      // 返回这个property的值
+  } else {
+    return "Not Found";
+  }
+}
+```
+
+**4. 多个objects放一起**
+
+```js
+var myMusic = [
+  {
+    "artist": "Billy Joel",
+    "title": "Piano Man",
+    "release_year": 1973,
+    "formats": [
+      "CD",
+      "8T",
+      "LP"
+    ],
+    "gold": true
+},  // object和object之间需要有一个逗号，最后一个不需要
+{
+    "artist": "Billy Joel",
+    "title": "Piano Man",
+    "release_year": 1973,
+    "formats": [ 
+      "CD",
+      "8T",
+      "LP"
+    ],
+    "gold": true
+  }
+];
+```
+
+
+
+**5. JSON 层次结构**
+
+```js
+var collection = {
+  2548: {
+    albumTitle: 'Slippery When Wet',
+    artist: 'Bon Jovi',
+    tracks: ['Let It Rock', 'You Give Love a Bad Name']
+  },
+  2468: {
+    albumTitle: '1999',
+    artist: 'Prince',
+    tracks: ['1999', 'Little Red Corvette']
+  },
+  1245: {
+    artist: 'Robert Palmer',
+    tracks: []
+  },
+  5439: {
+    albumTitle: 'ABBA Gold'
+  }
+};
+
+function updateRecords(object, id, prop, value) {
+  if (prop !== 'tracks' && value !== "") {
+    object[id][prop] = value;    //访问子属性，id和prop不是特定的属性，所以不用加引号
+  } else if (prop === "tracks" && object[id].hasOwnProperty("tracks") === false) {
+    object[id][prop] = [value];
+  } else if (prop === "tracks" && value !== "") {
+    object[id][prop].push(value);
+  } else if (value === "") {
+    delete object[id][prop];
+  }
+  return object;
+}
+
+updateRecords(collection, 5439, 'artist', 'ABBA');
+```
+
+
 
 
 
@@ -296,6 +464,64 @@ sequentialSizes(1);
 
 
 
+### 循环迭代
+
+`while`
+
+```js
+var myArray = [];
+
+var i = 5;
+while (i >= 0) {  // 圆括号里是条件
+  myArray.push(i);
+  i--;
+}
+// 结果是myArray = [5,4,3,2,1,0]
+```
+
+
+
+`for(a; b; c)`
+
+| 字母 | 意思                    | 作用                                             |
+| ---- | ----------------------- | ------------------------------------------------ |
+| a    | intialization statement | 循环开始之前只执行一次，用于定义和设置循环的变量 |
+| b    | condition statement     | 循环执行的条件                                   |
+| c    | final expression        | 循环最后的命令，增减循环变量的值                 |
+
+```js
+var myArray = [];
+
+for(var i = 1; i <=5; i++) {
+  myArray.push(i);
+}
+// myArray = [1,2,3,4,5];
+
+
+var myArray = [];
+
+for (var i = 9; i > 0; i -= 2) {
+  myArray.push(i);
+}
+// myArray = [9,7,5,3,1];
+
+/* 循环运算 */
+var myArr = [ 2, 3, 4, 5, 6];
+
+var total = 0;
+for (var i = 0; i < myArr.length; i++) {  // i是索引，索引数组里的数字
+  total += myArr[i];   // 运算就是0+2+3+4+5+6，结果total=20
+}
+```
+
+
+
+
+
+
+
+
+
 ## 赋值
 
 `variable`
@@ -349,7 +575,7 @@ var ourArray = [50,40,30];
 ourArray[0] = 15; // equals [15,40,30]
 ```
 
-**1.3 多值变量开始及结尾加值**
+**1.3 开始及结尾加值**
 
 `.unshift()` 开始
 
@@ -376,7 +602,7 @@ arr2.push(["happy", "joy"]);
 
 `.shift()` 消除首值，新变量=消除的值，原变量=消除后的值
 
-`.pop()`   消除尾值
+`.pop()`   消除尾值，同上
 
 ```js
 var threeArr = [1, 4, 6];
@@ -429,11 +655,10 @@ var quotient = 66 / 33;
 
 **2. 快捷运算**
 
-| 代码 | 意思 |   |
-| - | - | - |
-| `i++;` | `i = i + 1;` |   |
-| `i--;` | `i = i - 1;` |   |
-|   |   |   |
+| 代码 | 意思 |
+| - | - |
+| `i++;` | `i = i + 1;` |
+| `i--;` | `i = i - 1;` |
 
 **3. 运算符号**
 
@@ -459,6 +684,8 @@ var a = 5;
 a *= 5;
 console.log(a); // Returns 25
 ```
+
+
 
 #### 字符串赋值
 
@@ -552,7 +779,13 @@ var myStr = "Bob";
 myStr = "Job";
 ```
 
+
+
 #### 布尔值赋值
+
+
+
+
 
 
 
@@ -670,9 +903,9 @@ isLess(15, 10);  // return false
 
 ## Q&A
 
-1. 函数需要return，return后answer才有函数结果。
+1. 函数需要`return`，`return`后`answer`才有函数结果。
 2. `console log` 是给网页控制台输出信息的，类似`print`.  弹窗为`alert`.
-3.
+3. 
 
 
 
