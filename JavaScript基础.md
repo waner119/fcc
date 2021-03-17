@@ -277,6 +277,8 @@ ourDog.bark = "bow-wow";  // 新增属性
 delete ourDog.friends; // 减去属性
 ```
 
+
+
 **3. 查找值**
 
 `lookup`
@@ -301,6 +303,8 @@ function phoneticLookup(val) {
 phoneticLookup("charlie");
 ```
 
+
+
 **3.1 查找是否有特定的property**
 
 `.hasOwnProperty()`
@@ -324,6 +328,60 @@ function checkObj(obj, checkProp) {
   }
 }
 ```
+
+**3.2 用循环和if查找对象里的值**
+
+```js
+// 四个对象
+var contacts = [
+    {
+        "firstName": "Akira",
+        "lastName": "Laine",
+        "number": "0543236543",
+        "likes": ["Pizza", "Coding", "Brownie Points"]
+    },
+    {
+        "firstName": "Harry",
+        "lastName": "Potter",
+        "number": "0994372684",
+        "likes": ["Hogwarts", "Magic", "Hagrid"]
+    },
+    {
+        "firstName": "Sherlock",
+        "lastName": "Holmes",
+        "number": "0487345643",
+        "likes": ["Intriguing Cases", "Violin"]
+    },
+    {
+        "firstName": "Kristian",
+        "lastName": "Vos",
+        "number": "unknown",
+        "likes": ["JavaScript", "Gaming", "Foxes"]
+    }
+];
+
+// 查找name 和 property
+function lookUpProfile(name, prop) {
+  for (let x = 0; x < contacts.length; x++) {
+    if (contacts[x].firstName === name) {
+      if (contacts[x].hasOwnProperty(prop)) {
+        return contacts[x][prop];
+      } else {
+        return "No such property";
+      }
+    }
+  }
+  return "No such contact";   // 如果x进入，firstName找不到name，就会直接打到这里
+}
+
+lookUpProfile("Akira", "likes");
+```
+
+
+
+
+
+
 
 **4. 多个objects放一起**
 
@@ -468,7 +526,10 @@ sequentialSizes(1);
 
 `while`
 
+`do...while...`
+
 ```js
+/* while */
 var myArray = [];
 
 var i = 5;
@@ -477,6 +538,22 @@ while (i >= 0) {  // 圆括号里是条件
   i--;
 }
 // 结果是myArray = [5,4,3,2,1,0]
+
+/* while 与 do while对比 */
+var ourArray = []; 
+var i = 5;
+while (i < 5) {
+  ourArray.push(i);
+  i++;
+}
+
+var ourArray = []; 
+var i = 5;
+do {
+  ourArray.push(i);
+  i++;
+} while (i < 5); 
+// 这个里面保证ourArray至少有一个值，[5]，上面的while直接不符合条件就退出了
 ```
 
 
@@ -512,7 +589,97 @@ var total = 0;
 for (var i = 0; i < myArr.length; i++) {  // i是索引，索引数组里的数字
   total += myArr[i];   // 运算就是0+2+3+4+5+6，结果total=20
 }
+
+/* 嵌套循环 */
+function multiplyAll(arr) {
+  var product = 1;
+  
+for (var i=0; i < arr.length; i++) {
+  for (var j=0; j < arr[i].length; j++) {  // 每一层是j循环完了，i才会加1，然后j又循环完，i又加1.
+    product = product * arr[i][j];
+  }
+}
+  return product;
+}
+
+multiplyAll([[1,2],[3,4],[5,6,7]]);
+// 循环顺序是：product = product * arr[0][0]
+//           product = product * arr[0][1]
+//           product = product * arr[0][2] ...
 ```
+
+
+
+### 递归
+
+- 加法的第一位都是0，乘法的第一位都是1.
+
+- 5! = 5 * 4 * 3 * 2 * 1
+
+​       5! = 4! * 5     阶乘
+
+- `multiply(arr, n) == multiply(arr, n - 1) * arr[n - 1]`
+
+  所有数的乘积等于前n-1个数相乘在乘以最后一个数
+
+```js
+// 乘
+  function multiply(arr, n) {
+    if (n <= 0) {
+      return 1;
+    } else {
+      return multiply(arr, n - 1) * arr[n - 1];
+    }
+  }
+
+// 加
+function sum(arr, n) {
+
+ if (n <= 0) {
+   return 0; 
+   } else {
+     return sum(arr, n - 1) + arr[n - 1];
+   }
+ }
+
+```
+
+
+
+### 随意给值
+
+**小数值**
+
+`Math.random()`     0到1中间的小数值
+
+```js
+function randomFraction() {
+  
+var result = 0;
+while (result === 0) {
+  result = Math.random();
+}
+  return result;
+```
+
+
+
+**整数值**
+
+`Math.floor()`  0到19的整数
+
+`Math.floor(Math.random() * 20)`     会用小数*20在四舍五入到最接近的整数（0-19）
+
+如果是\* 10 就是0-9的整数
+
+```js
+function randomWholeNum() {
+
+  return Math.floor(Math.random() * 10);
+}
+```
+
+
 
 
 
@@ -817,10 +984,12 @@ myFun();
 
 ```Js
 function functionWithArgs(one, two) { // one和two是当占位符的参数
-  console.log(one+two); // 中间要有 + 号
+  console.log(one + two); // 中间要有 + 号
 }
 functionWithArgs(6, 16);  // 赋予两个值，一个6，一个16
 ```
+
+
 
 **2. 作用域 scope**
 
@@ -848,6 +1017,8 @@ function myFun() {
   return someVar; // Returns "Head"
 }
 ```
+
+
 
 **3. 返回值**
 
@@ -917,7 +1088,7 @@ isLess(15, 10);  // return false
 | assignment | 赋值 |   |
 | indentation | 缩进 |   |
 | scope | 变量可见性 |   |
-|   |   |   |
+| recursion | 递归（来回跑） |   |
 |   |   |   |
 |   |   |   |
 |   |   |   |
