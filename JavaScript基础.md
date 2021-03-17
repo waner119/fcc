@@ -8,14 +8,13 @@ JS是一种脚本语言，用于页面交互以及动态样式，适配于所有
 
   - `//`  单行注释
   - `/*  */` 多行注释
+
 - 检验数据类型
 
-  ```js
+  ```javascript
   typeof 3   // returns 'number'
   typeof '3' // returns 'string'
   ```
-
-
 
 ## JS 八种数据类型
 
@@ -29,7 +28,7 @@ JS是一种脚本语言，用于页面交互以及动态样式，适配于所有
 
 **1. if 条件**
 
-```js
+```javascript
 /* 原理 */
 if (condition is true) {
   statement is executed
@@ -78,7 +77,7 @@ testLogicalOr(15); // Returns Inside
 
 **1.1 if else用法**
 
-```js
+```javascript
 if (num > 10) {
   return "Bigger than 10";
 } else {
@@ -101,7 +100,7 @@ if (num > 15) {
 
 代码是从上往下运行的，会优先运行行数在上的结果。
 
-```js
+```javascript
 function foo(x) {
   if (x < 1) {
     return "Less than one";
@@ -126,22 +125,20 @@ foo(0) // "Less than one"
 bar(0) // "Less than two"
 ```
 
-
-
 **2. 不同数据对比**
 
 `==` 相等，`!=` 不相等，`>`大于，`>=`大于等于，`<` 小于，`<=`小于等于，不同数据类型可以转换
 
 `===` 严格相等，`!===` 严格不相等，数据类型需要一样
 
-| 代码 | 对错 |
-| - | - |
-| 1   ==  1 | True |
-| 1   ==  2 | False |
-| 1   == '1' | True |
-| "3" ==  3 | True |
-| 3 ===  3 | True |
-| 3 === '3' | False |
+| 代码       | 对错  |
+| ---------- | ----- |
+| 1   ==  1  | True  |
+| 1   ==  2  | False |
+| 1   == '1' | True  |
+| "3" ==  3  | True  |
+| 3 ===  3   | True  |
+| 3 === '3'  | False |
 
 ### string  字符串
 
@@ -155,7 +152,7 @@ bar(0) // "Less than two"
 
 用于以结构化的方式储存数据，数据可以是真实世界的实物，例如猫。通常可以用属性 `properties` 来访问这个数据。
 
-```js
+```javascript
 var cat = {
   "name": "Whiskers",
   "legs": 4,
@@ -175,7 +172,7 @@ var anotherObject = {
 - 两种方式，`.` 和`[]`
 - **一般都用方括号[ ]**
 
-```js
+```javascript
 /* 圆点一般不常用*/
 var myObj = {
   prop1: "val1",
@@ -249,7 +246,7 @@ ourPets[1].names[0];  // returns "Spot"
 
 **2.1 更改property里的值**
 
-```js
+```javascript
 var myDog = {
   "name": "Coder",
   "legs": 4,
@@ -265,7 +262,7 @@ myDog["name"] = "Happy Coder"; // 这个跟上面的都可以
 
 `delete`
 
-```js
+```javascript
 var ourDog = {
   "name": "Camper",
   "legs": 4,
@@ -283,7 +280,7 @@ delete ourDog.friends; // 减去属性
 
 `lookup`
 
-```js
+```javascript
 function phoneticLookup(val) {
   var result = "";
 
@@ -309,7 +306,7 @@ phoneticLookup("charlie");
 
 `.hasOwnProperty()`
 
-```js
+```javascript
 /* 检测这个变量里是否有某个property */
 var myObj = {
   top: "hat",
@@ -385,7 +382,7 @@ lookUpProfile("Akira", "likes");
 
 **4. 多个objects放一起**
 
-```js
+```javascript
 var myMusic = [
   {
     "artist": "Billy Joel",
@@ -416,7 +413,7 @@ var myMusic = [
 
 **5. JSON 层次结构**
 
-```js
+```javascript
 var collection = {
   2548: {
     albumTitle: 'Slippery When Wet',
@@ -471,7 +468,7 @@ updateRecords(collection, 5439, 'artist', 'ABBA');
 - `break` 是告诉JS此句已终止，如果没有`break`，会执行下一句
 - 比`ifelse` 写起来要简洁
 
-```js
+```javascript
 function caseInSwitch(val) {
   var answer = "";
 switch(val) {
@@ -499,7 +496,7 @@ caseInSwitch(1);
 
 **3.1 多个值一个输出**
 
-```js
+```javascript
 function sequentialSizes(val) {
   var answer = "";
  switch(val) {
@@ -526,10 +523,14 @@ sequentialSizes(1);
 
 `while`
 
+<<<<<<< Updated upstream
 `do...while...`
 
 ```js
 /* while */
+=======
+```javascript
+>>>>>>> Stashed changes
 var myArray = [];
 
 var i = 5;
@@ -566,7 +567,7 @@ do {
 | b    | condition statement     | 循环执行的条件                                   |
 | c    | final expression        | 循环最后的命令，增减循环变量的值                 |
 
-```js
+```javascript
 var myArray = [];
 
 for(var i = 1; i <=5; i++) {
@@ -695,7 +696,7 @@ function randomWholeNum() {
 
 命名可用数字，字母，`$`, `_` 命名，不可包含空格或用数字开头，命名区分大小写。建议的命名方式 `camelCase`，即第一个单词首字母小写，之后的单词首字母皆大写。
 
-```js
+```javascript
 var myVar;
 myVar = 5;
 ```
@@ -704,7 +705,7 @@ myVar = 5;
 
 array   可以储存多个数据类型，用逗号隔开
 
-```js
+```javascript
 //单个方括号
 var myArray = ["Katelyn", 25];
 //多个方括号, 括号内外都要逗号隔开
@@ -715,7 +716,7 @@ var myArray = [["Katelyn", 25], ["Kate", 30]];
 
 `变量名[N]`  从0开始
 
-```js
+```javascript
 /* 单行值索引  */
 var array = [50,60,70];
 array[0]; // equals 50
@@ -737,7 +738,7 @@ arr[3][0][1]; // equals 11
 
 `变量名[N] =`
 
-```js
+```javascript
 var ourArray = [50,40,30];
 ourArray[0] = 15; // equals [15,40,30]
 ```
@@ -748,7 +749,7 @@ ourArray[0] = 15; // equals [15,40,30]
 
 `.push()` 结尾
 
-```js
+```javascript
 /* 开始 */
 var ourArray = ["Stimpson", "J", "cat"];
 ourArray.shift(); // ourArray now equals ["J", "cat"]
@@ -771,7 +772,7 @@ arr2.push(["happy", "joy"]);
 
 `.pop()`   消除尾值，同上
 
-```js
+```javascript
 var threeArr = [1, 4, 6];
 var oneDown = threeArr.pop();  //消除了6，并在下一行oneDown变量返还了该值
 console.log(oneDown); // Returns 6
@@ -788,7 +789,7 @@ console.log(threeArr); // Returns [1, 4], 被.pop消除了结尾值6
 
 一个list至少有五组值，每一组由一个字符串和一个数值组成。
 
-```js
+```javascript
 var myList = [
     ["Chocolate Bar", 15], ["Milk",1], ["Bread", 1], ["Pear", 1], ["Stawberry", 2]];
 ```
@@ -799,19 +800,19 @@ var myList = [
 
 八种数据类型可能会被储存在变量里。
 
-| 数据类型 | 解释 | 例子 |
-| - | - | - |
-| `string` | 字符串，需要引号括起来 | `let myVariable = 'Bob';` |
-| `number` | 数字，不需要引号 | `let myVariable = 10;` |
-| `boolean` | 布尔值，True/False value，不需要引号 | `let myVariable = true;` |
-| `array` | 数据组，可以储存多个值 | `let myVariable = [1,'Bob','Steve',10];` |
-| `object` | 可以是任何东西 | `let myVariable = document.querySelector('h1');` |
+| 数据类型  | 解释                                 | 例子                                             |
+| --------- | ------------------------------------ | ------------------------------------------------ |
+| `string`  | 字符串，需要引号括起来               | `let myVariable = 'Bob';`                        |
+| `number`  | 数字，不需要引号                     | `let myVariable = 10;`                           |
+| `boolean` | 布尔值，True/False value，不需要引号 | `let myVariable = true;`                         |
+| `array`   | 数据组，可以储存多个值               | `let myVariable = [1,'Bob','Steve',10];`         |
+| `object`  | 可以是任何东西                       | `let myVariable = document.querySelector('h1');` |
 
 #### 数值赋值
 
 **1. 赋值初始值**
 
-```js
+```javascript
 var myVar = 0;
 //可用 `+`  `-` `*` `/` 计算，支持小数及小数运算。
 var sum = 10 + 10;
@@ -822,18 +823,18 @@ var quotient = 66 / 33;
 
 **2. 快捷运算**
 
-| 代码 | 意思 |
-| - | - |
+| 代码   | 意思         |
+| ------ | ------------ |
 | `i++;` | `i = i + 1;` |
 | `i--;` | `i = i - 1;` |
 
 **3. 运算符号**
 
-| 符号 | 运算方式 | 例子 | 备注 |
-| - | - | - | - |
-| % | 余数 | `17 % 2` = 1 | 不适宜用在负数上 |
-|   |   |   |   |
-|   |   |   |   |
+| 符号 | 运算方式 | 例子         | 备注             |
+| ---- | -------- | ------------ | ---------------- |
+| %    | 余数     | `17 % 2` = 1 | 不适宜用在负数上 |
+|      |          |              |                  |
+|      |          |              |                  |
 
 > 17 - 2\*2*2\*2 = 1
 
@@ -841,7 +842,7 @@ var quotient = 66 / 33;
 
 `+=`   `-=`   `*=`   `/=`
 
-```js
+```javascript
 // 加法
 var myVar = 1;
 myVar += 5;
@@ -858,7 +859,7 @@ console.log(a); // Returns 25
 
 字符串一旦创立，其他元素无法改变，但可以自身改变。
 
-```js
+```javascript
 var myFirstName = "Katelyn"
 var myLastName = "Lee"
 ```
@@ -871,19 +872,19 @@ var myLastName = "Lee"
   - 引号重复，避免字符串提前结束
 - 不同转义字符的意思
 
-| 字符 | 意思 | 备注 |
-| - | - | - |
-| `\'` | 单引号 |   |
-| `\"` | 双引号 |   |
-| `\n` | 新的一行 |   |
-| `\r` | 回车 |   |
-| `\t` | tab |   |
-| `\b` | word boundary |   |
-| `\f` | form feed |   |
+| 字符 | 意思          | 备注 |
+| ---- | ------------- | ---- |
+| `\'` | 单引号        |      |
+| `\"` | 双引号        |      |
+| `\n` | 新的一行      |      |
+| `\r` | 回车          |      |
+| `\t` | tab           |      |
+| `\b` | word boundary |      |
+| `\f` | form feed     |      |
 
 **2. 字符串连接**
 
-```js
+```javascript
 // 用`+`号
 var ourStr = "I come first. " + "I come second."; 
 //用`+=`号
@@ -909,7 +910,7 @@ ourStr += anAdjective;
 
 `变量名.length`
 
-```js
+```javascript
 var lastNameLength = 0;
 var lastName = "Lovelace";
 lastNameLength = lastName.length;
@@ -921,7 +922,7 @@ lastNameLength = lastName.length;
 
 正数字符索引。数字是从0开始，第一个character实际上是0.
 
-```js
+```javascript
 var firstLetterOfLastName = "";
 var lastName = "Lovelace";
 
@@ -933,7 +934,7 @@ firstLetterOfLastName = lastName[0];
 
 倒数字符索引。倒数第几位，N就是几。
 
-```js
+```javascript
 var firstName = "Charles";
 var lastLetter = firstName[firstName.length - 1]; 
 // Returns "s"
@@ -941,7 +942,7 @@ var lastLetter = firstName[firstName.length - 1];
 
 **5. 赋值改变**
 
-```js
+```javascript
 var myStr = "Bob";
 myStr = "Job";
 ```
@@ -960,7 +961,7 @@ myStr = "Job";
 
 `function`
 
-```js
+```javascript
 function reusableFunction() {
   console.log("Hi World");
 }
@@ -982,7 +983,7 @@ myFun();
 
 - 占位符可以是数据类型的缩写，例如`arr`,`num`,`item`,`str`等
 
-```Js
+```javascript
 function functionWithArgs(one, two) { // one和two是当占位符的参数
   console.log(one + two); // 中间要有 + 号
 }
@@ -996,7 +997,7 @@ functionWithArgs(6, 16);  // 赋予两个值，一个6，一个16
 - 在`function`外的变量，JS随处可见，称为*Global scope*
 - 在`function`内的变量，只有在那个`function`里才能见，称为*local scope*
 
-```js
+```javascript
 /* function内的变量 */
 function myTest() {
   var loc = "foo";
@@ -1010,7 +1011,7 @@ console.log(loc); // loc is undefined
 
 `local`  比 `global`优先级高
 
-```js
+```javascript
 var someVar = "Hat";  // Global variable
 function myFun() {
   var someVar = "Head"; // Local variable
@@ -1024,7 +1025,7 @@ function myFun() {
 
 `return`
 
-```js
+```javascript
 function plusThree(num) {
   return num + 3;
 }
@@ -1043,7 +1044,7 @@ processed = processArg(7); // 此行，用返回值赋值
 
 `arr`是数组，`item`是数值
 
-```js
+```javascript
 function nextInLine(arr, item) {
 arr.push(item); //给nextInLine函数数组arr最后增加一个数字值
  var removed = arr.shift(); // 删除函数数组第一个值
@@ -1061,7 +1062,7 @@ console.log("After: " + JSON.stringify(testArr));
 
 **5. 对比大小**
 
-```js
+```javascript
 function isLess(a, b) {
   return a < b;
 }
@@ -1082,6 +1083,7 @@ isLess(15, 10);  // return false
 
 ## 专业词汇
 
+<<<<<<< Updated upstream
 | 单词 | 意思 | 备注 |
 | - | - | - |
 | remainder | 余数 |   |
@@ -1093,3 +1095,16 @@ isLess(15, 10);  // return false
 |   |   |   |
 |   |   |   |
 |   |   |   |
+=======
+| 单词        | 意思       | 备注 |
+| ----------- | ---------- | ---- |
+| remainder   | 余数       |      |
+| assignment  | 赋值       |      |
+| indentation | 缩进       |      |
+| scope       | 变量可见性 |      |
+|             |            |      |
+|             |            |      |
+|             |            |      |
+|             |            |      |
+|             |            |      |
+>>>>>>> Stashed changes
