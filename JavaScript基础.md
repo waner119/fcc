@@ -1214,28 +1214,14 @@ isLess(15, 10);  // return false
 
 ## 专业词汇
 
-<<<<<<< Updated upstream
-| 单词 | 意思 | 备注 |
-| - | - | - |
-| remainder | 余数 |   |
-| assignment | 赋值 |   |
-| indentation | 缩进 |   |
-| scope | 变量可见性 |   |
-| recursion | 递归（来回跑） |   |
-|   |   |   |
-|   |   |   |
-|   |   |   |
-|   |   |   |
-=======
-| 单词        | 意思       | 备注 |
-| ----------- | ---------- | ---- |
-| remainder   | 余数       |      |
-| assignment  | 赋值       |      |
-| indentation | 缩进       |      |
-| scope       | 变量可见性 |      |
-|             |            |      |
-|             |            |      |
-|             |            |      |
-|             |            |      |
-|             |            |      |
->>>>>>> Stashed changes
+| 单词        | 意思           | 备注 |
+| ----------- | -------------- | ---- |
+| remainder   | 余数           |      |
+| assignment  | 赋值           |      |
+| indentation | 缩进           |      |
+| scope       | 变量可见性     |      |
+| recursion   | 递归（来回跑） |      |
+|             |                |      |
+|             |                |      |
+|             |                |      |
+|             |                |      |
