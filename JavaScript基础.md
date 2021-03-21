@@ -535,6 +535,8 @@ sequentialSizes(1);
 
 a为条件，b是判定是`true`的时候执行，c是判定是`false`的时候执行。
 
+**1.2.1 判断单个条件**
+
 ```js
 function checkEqual(a, b) {
   return a === b ? "Equal" : "Not Equal";
@@ -545,7 +547,7 @@ checkEqual(1, 2);
 
 
 
-**判断多个条件**
+**1.2.2 判断多个条件**
 
 ```js
 /* 写成if else的形式 */
@@ -569,8 +571,6 @@ function findGreaterOrEqual(a, b) {
 }
 
 ```
-
-
 
 
 
@@ -665,8 +665,8 @@ multiplyAll([[1,2],[3,4],[5,6,7]]);
 
 ### 递归
 
-- 加法的第一位都是0，乘法的第一位都是1.
-
+- 递归的核心是自己运算
+- 加法的第一位都是0，乘法的第一位都是1
 - 5! = 5 * 4 * 3 * 2 * 1
 
 ​       5! = 4! * 5     阶乘
@@ -691,9 +691,49 @@ function sum(arr, n) {
  if (n <= 0) {
    return 0; 
    } else {
-     return sum(arr, n - 1) + arr[n - 1];
+     return sum(arr, n - 1) + arr[n - 1];   //[n-1]是最后一个数，(n-1)是对自身运算
    }
  }
+
+
+// 递归正计时
+function countup(n) {
+  if (n < 1) {
+    return [];
+  } else {
+    const countArray = countup(n - 1);
+    countArray.push(n);
+    return countArray;
+  }
+}
+console.log(countup(5)); //输出[1, 2, 3, 4, 5]
+/* 运算顺序 countArray = countup(4) + [5]
+           countup(4) = countup(3) + [4]
+           countArray = countup(3) + [4] + [5] ...*/
+
+
+//递归倒计时
+function countdown(n){
+    if (n < 1) {
+    return [];
+  } else {
+    const countArray = countdown(n - 1);
+    countArray.unshift(n);
+    return countArray;
+  }
+}
+console.log(countdown(5)) // 输出[5, 4, 3, 2, 1]
+
+//递归创建一序列的数
+function rangeOfNumbers(startNum, endNum) {
+  if (endNum - startNum === 0) {
+    return [startNum];
+  } else {
+    var numbers = rangeOfNumbers(startNum, endNum - 1);
+    numbers.push(endNum);
+    return numbers;
+  }
+}    // rangeOfNumbers(1, 5) 则会输出[1, 2, 3, 4, 5]
 
 ```
 
