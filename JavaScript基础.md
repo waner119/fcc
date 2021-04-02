@@ -11,10 +11,10 @@ JS是一种脚本语言，用于页面交互以及动态样式，适配于所有
 
 - 检验数据类型
 
-  ```javascript
-  typeof 3   // returns 'number'
-  typeof '3' // returns 'string'
-  ```
+```javascript
+typeof 3   // returns 'number'
+typeof '3' // returns 'string'
+```
 
 ## JS 八种数据类型
 
@@ -144,12 +144,6 @@ bar(0) // "Less than two"
 
 
 
-
-
-
-
-
-
 ### symbol 符号
 
 ### BigInt  比2<sup>53</sup> -1 大的数值
@@ -247,9 +241,6 @@ ourPets[0].names[1];  // returns "Fluffy"
 ourPets[1].names[0];  // returns "Spot"
 
 ```
-
-
-
 **2. 编辑对象里的属性和值**
 
 **2.1 更改property里的值**
@@ -281,9 +272,6 @@ var ourDog = {
 ourDog.bark = "bow-wow";  // 新增属性
 delete ourDog.friends; // 减去属性
 ```
-
-
-
 **3. 查找值**
 
 `lookup`
@@ -307,9 +295,6 @@ function phoneticLookup(val) {
 
 phoneticLookup("charlie");
 ```
-
-
-
 **3.1 查找是否有特定的property**
 
 `.hasOwnProperty()`
@@ -382,12 +367,6 @@ function lookUpProfile(name, prop) {
 lookUpProfile("Akira", "likes");
 ```
 
-
-
-
-
-
-
 **4. 多个objects放一起**
 
 ```javascript
@@ -416,9 +395,6 @@ var myMusic = [
   }
 ];
 ```
-
-
-
 **5. JSON 层次结构**
 
 ```javascript
@@ -457,9 +433,6 @@ function updateRecords(object, id, prop, value) {
 
 updateRecords(collection, 5439, 'artist', 'ABBA');
 ```
-
-
-
 
 
 ## 句法
@@ -526,9 +499,6 @@ function sequentialSizes(val) {
 
 sequentialSizes(1);
 ```
-
-
-
 **1.2 三元判断**
 
 `a ? b : c`
@@ -544,9 +514,6 @@ function checkEqual(a, b) {
 // 判定a与b是否绝对相等，如果相等显示"Equal"，不相等显示"Not Equal"
 checkEqual(1, 2);
 ```
-
-
-
 **1.2.2 判断多个条件**
 
 ```js
@@ -571,9 +538,6 @@ function findGreaterOrEqual(a, b) {
 }
 
 ```
-
-
-
 
 
 ### 循环迭代
@@ -608,9 +572,6 @@ do {
 } while (i < 5); 
 // 这个里面保证ourArray至少有一个值，[5]，上面的while直接不符合条件就退出了
 ```
-
-
-
 `for(a; b; c)`
 
 | 字母 | 意思                     | 作用                                             |
@@ -660,9 +621,6 @@ multiplyAll([[1,2],[3,4],[5,6,7]]);
 //           product = product * arr[0][1]
 //           product = product * arr[0][2] ...
 ```
-
-
-
 ### 递归
 
 - 递归的核心是自己运算
@@ -736,9 +694,6 @@ function rangeOfNumbers(startNum, endNum) {
 }    // rangeOfNumbers(1, 5) 则会输出[1, 2, 3, 4, 5]
 
 ```
-
-
-
 ### 整数、小数
 
 **1. 随意给小数值**
@@ -754,9 +709,6 @@ while (result === 0) {
 }
   return result;
 ```
-
-
-
 **2. 随意给整数值**
 
 - `Math.floor()`  0到19的整数
@@ -812,12 +764,6 @@ return a;
 
 convertToInteger("10011");
 ```
-
-
-
-
-
-
 
 
 
@@ -909,9 +855,6 @@ var oneDown = threeArr.pop();  //消除了6，并在下一行oneDown变量返还
 console.log(oneDown); // Returns 6
 console.log(threeArr); // Returns [1, 4], 被.pop消除了结尾值6
 ```
-
-
-
 ### 乱 赋值
 
 **1. Shopping List**
@@ -924,9 +867,6 @@ console.log(threeArr); // Returns [1, 4], 被.pop消除了结尾值6
 var myList = [
     ["Chocolate Bar", 15], ["Milk",1], ["Bread", 1], ["Pear", 1], ["Stawberry", 2]];
 ```
-
-
-
 ### 数据类型赋值
 
 八种数据类型可能会被储存在变量里。
@@ -983,9 +923,6 @@ var a = 5;
 a *= 5;
 console.log(a); // Returns 25
 ```
-
-
-
 #### 字符串赋值
 
 字符串一旦创立，其他元素无法改变，但可以自身改变。
@@ -1077,16 +1014,7 @@ var lastLetter = firstName[firstName.length - 1];
 var myStr = "Bob";
 myStr = "Job";
 ```
-
-
-
 #### 布尔值赋值
-
-
-
-
-
-
 
 ## 函数
 
@@ -1120,9 +1048,6 @@ function functionWithArgs(one, two) { // one和two是当占位符的参数
 }
 functionWithArgs(6, 16);  // 赋予两个值，一个6，一个16
 ```
-
-
-
 **2. 作用域 scope**
 
 - 在`function`外的变量，JS随处可见，称为*Global scope*
@@ -1149,9 +1074,6 @@ function myFun() {
   return someVar; // Returns "Head"
 }
 ```
-
-
-
 **3. 返回值**
 
 `return`
@@ -1201,17 +1123,11 @@ function isLess(a, b) {
 isLess(10, 15);  //return true
 isLess(15, 10);  // return false
 ```
-
-
-
 ## Q&A
 
 1. 函数需要`return`，`return`后`answer`才有函数结果。
 2. `console log` 是给网页控制台输出信息的，类似`print`.  弹窗为`alert`.
 3. 
-
-
-
 ## 专业词汇
 
 | 单词        | 意思           | 备注 |
