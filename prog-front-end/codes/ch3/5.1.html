@@ -1,0 +1,25 @@
+<body>
+    <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+
+    <script>
+        const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];
+
+        d3.select("body").selectAll("h2")
+            .data(dataset)
+            .enter()
+            .append("h2")
+            // 添加文本
+            .text((d) => d + " USD")
+            .style('font-family', 'verdana')
+            .style("background-color", (d) => {
+                if (d < 20) {
+                    return 'red'
+                }
+                else {
+                    return 'green'
+                }
+            })
+            .style("height", (d) => (d * 10 + "px"))
+    </script>
+
+</body>
