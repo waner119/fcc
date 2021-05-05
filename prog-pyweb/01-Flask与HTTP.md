@@ -136,7 +136,7 @@ app.config.update(
 - 浏览器会自动再次发送请求去获取图片，CSS 文件，或 JS 文件
 - 当所有的文件都下载成功后，网页会根据 HTML 语法结构，完整的显示出来
 
-![workflow](./images/ch6/flask_workflow.png)
+![workflow](images/ch6/flask_workflow.png)
 
 ### 3.1. 请求方法
 
@@ -188,7 +188,7 @@ colors = ['blue', 'white', 'red']
 - `teardown_request` ：在每个请求结束后，使一个函数有未处理的异常抛出，如果发生异常，会传入异常对象作为参数到注册的函数中。
 - `after_this_request` ：在这个请求结束后运行一个函数。
 
-![hooks](./images/ch1/flask_hooks.png)
+![hooks](images/ch1/flask_hooks.png)
 
 ### 3.4. 请求报文
 
