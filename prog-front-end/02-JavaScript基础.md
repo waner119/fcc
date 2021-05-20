@@ -209,12 +209,15 @@ console.log(s); // Set {1, 2, 4}
 
 ```javascript
 // if
+var x;
+var time = 50;
 if (time<10)
  {x="Good morning";}
 else if (time<20)
  {x="Good day";}
 else
  {x="Good evening";}
+console.log(x)
 ```
 
 ```javascript
