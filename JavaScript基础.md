@@ -257,7 +257,7 @@ myDog["name"] = "Happy Coder"; // 这个跟上面的都可以
 
 2.2 增减 property
 
- `delete` 
+ `delete`
 
 ```javascript
 var ourDog = {
@@ -270,9 +270,10 @@ var ourDog = {
 ourDog.bark = "bow-wow";  // 新增属性
 delete ourDog.friends; // 减去属性
 ```
+
 #### 3. 查找值
 
- `lookup` 
+ `lookup`
 
 ```javascript
 function phoneticLookup(val) {
@@ -293,6 +294,7 @@ function phoneticLookup(val) {
 
 phoneticLookup("charlie");
 ```
+
 3.1 查找是否有特定的 property
 
  `.hasOwnProperty()` 
@@ -393,6 +395,7 @@ var myMusic = [
   }
 ];
 ```
+
 #### 5. JSON 层次结构
 
 ```javascript
@@ -432,7 +435,6 @@ function updateRecords(object, id, prop, value) {
 updateRecords(collection, 5439, 'artist', 'ABBA');
 ```
 
-
 ## 3. 句法
 
 乱七八糟各种句法
@@ -441,11 +443,11 @@ updateRecords(collection, 5439, 'artist', 'ABBA');
 
 #### 1. 多种可能情况
 
- `switch` 
+ `switch`
 
 是一种条件语句，跟 `if`  `else` 有些相似。针对多种可能的情况评估表达式，并根据匹配的情况执行代码块。
 
-- `case` 后面的值匹配的时候需要绝对相等 `===` 
+- `case` 后面的值匹配的时候需要绝对相等 `===`
 - `break` 是告诉 JS 此句已终止，如果没有 `break` ，会执行下一句
 - 比 `ifelse` 写起来要简洁
 
@@ -497,9 +499,10 @@ function sequentialSizes(val) {
 
 sequentialSizes(1);
 ```
+
 #### 2. 三元判断
 
- `a ? b : c` 
+ `a ? b : c`
 
 a 为条件，b 是判定是 `true` 的时候执行，c 是判定是 `false` 的时候执行。
 
@@ -512,6 +515,7 @@ function checkEqual(a, b) {
 // 判定 a 与 b 是否绝对相等，如果相等显示"Equal"，不相等显示"Not Equal"
 checkEqual(1, 2);
 ```
+
 2.2 判断多个条件
 
 ```js
@@ -539,8 +543,8 @@ function findGreaterOrEqual(a, b) {
 
 #### 3. 循环迭代
 
- `while` 
- `do...while...` 
+ `while`
+ `do...while...`
 
 ```js
 /* while */
@@ -623,11 +627,11 @@ multiplyAll([[1, 2], [3, 4], [5, 6, 7]]);
 
 - 递归的核心是自己运算
 - 加法的第一位都是 0，乘法的第一位都是 1
-- 5! = 5 * 4 * 3 * 2 * 1
+- 5! = 5\*4\*3\*2\*1
 
 ​       5! = 4! * 5     阶乘
 
-- `multiply(arr, n) == multiply(arr, n - 1) * arr[n - 1]` 
+- `multiply(arr, n) == multiply(arr, n - 1) * arr[n - 1]`
 
   所有数的乘积等于前 n-1 个数相乘在乘以最后一个数
 
@@ -708,6 +712,7 @@ while (result === 0) {
 }
   return result;
 ```
+
 #### 2. 随意给整数值
 
 - `Math.floor()` 0 到 19 的整数
@@ -716,7 +721,7 @@ while (result === 0) {
 
 ​        如果是\* 10 就是 0-9 的整数
 
-- `Math.floor(Math.random() * (max - min + 1)) + min` 规定一个范围内的整数值 
+- `Math.floor(Math.random() * (max - min + 1)) + min` 规定一个范围内的整数值
 
 ```js
 function randomWholeNum() {
@@ -731,11 +736,9 @@ return Math.floor(Math.random() * (myMax - myMin + 1)) + myMin;
 }
 ```
 
-
-
 2.1 字符串转成整数
 
- `parseInt()` 
+ `parseInt()`
 
 ```js
 var a = parseInt("007"); // 会转出成 `7` ，如果第一个字符串的元素无法转出数字，则会转出 `NaN` 
@@ -748,8 +751,6 @@ function convertToInteger(str) {
 
 convertToInteger("56");
 ```
-
-
 
 2.2 计算基数 radix
 
@@ -768,11 +769,9 @@ return a;
 convertToInteger("10011");
 ```
 
-
-
 ## 4. 赋值
 
- `variable` 
+ `variable`
 
 命名可用数字，字母， `$` , `_` 命名，不可包含空格或用数字开头，命名区分大小写。建议的命名方式 `camelCase` ，即第一个单词首字母小写，之后的单词首字母皆大写。
 
@@ -816,7 +815,7 @@ arr[3][0][1]; // equals 11
 
 1.2 修改变量里的值
 
- `变量名 [N] =` 
+ `变量名 [N] =`
 
 ```javascript
 var ourArray = [50, 40, 30];
@@ -863,7 +862,7 @@ console.log(threeArr); // Returns [1, 4], 被.pop 消除了结尾值 6
 
 1. Shopping List
 
-变量 `myList` 
+变量 `myList`
 
 一个 list 至少有五组值，每一组由一个字符串和一个数值组成。
 
@@ -904,7 +903,7 @@ var quotient = 66 / 33;
 | `i++;` | `i = i + 1;` |
 | `i--;` | `i = i - 1;` |
 
-3. 运算符号
+1. 运算符号
 
 | 符号 | 运算方式 | 例子         | 备注             |
 | ---- | -------- | ------------ | ---------------- |
@@ -982,7 +981,7 @@ ourStr += anAdjective;
 
 3. 计算字符串长度
 
- `变量名.length` 
+ `变量名.length`
 
 ```javascript
 var lastNameLength = 0;
@@ -1025,7 +1024,7 @@ myStr = "Job";
 
 ## 5. 函数
 
- `function` 
+ `function`
 
 ```javascript
 function reusableFunction() {
@@ -1055,6 +1054,7 @@ function functionWithArgs(one, two) { // one 和 two 是当占位符的参数
 }
 functionWithArgs(6, 16);  // 赋予两个值，一个 6，一个 16
 ```
+
 2. 作用域 scope
 
 - 在 `function` 外的变量，JS 随处可见，称为*Global scope*
@@ -1081,9 +1081,10 @@ function myFun() {
   return someVar; // Returns "Head"
 }
 ```
+
 3. 返回值
 
- `return` 
+ `return`
 
 ```javascript
 function plusThree(num) {
@@ -1135,8 +1136,6 @@ isLess(15, 10);  // return false
 
 1. 函数需要 `return` ， `return` 后 `answer` 才有函数结果。
 2. `console log` 是给网页控制台输出信息的，类似 `print` .  弹窗为 `alert` .
-
-   
 
 ## 7. 专业词汇
 
