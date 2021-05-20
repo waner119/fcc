@@ -26,7 +26,7 @@ typeof '3' // returns 'string'
 
 布尔值只有两个值，分别是 `true` 和 `false`
 
-**1. if 条件**
+#### 1. if 条件
 
 ```javascript
 /* 原理 */
@@ -49,7 +49,7 @@ function testEqual(val) {
   if (val ==12) { 
     return "Equal";
   }
-  return "Not Equal";
+    return "Not Equal";
 }
 
 testEqual(12); //括号里的值与 if 后条件匹配，看是 True 还是 Flase
@@ -75,7 +75,7 @@ function testLogicalOr(val) {
 testLogicalOr(15); // Returns Inside
 ```
 
-**1.1 if else 用法**
+1.1 if else 用法
 
 ```javascript
 if (num > 10) {
@@ -96,7 +96,7 @@ if (num > 15) {
 }
 ```
 
-**1.2 结果优先级**
+1.2 结果优先级
 
 代码是从上往下运行的，会优先运行行数在上的结果。
 
@@ -125,7 +125,7 @@ foo(0) // "Less than one"
 bar(0) // "Less than two"
 ```
 
-**2. 不同数据对比**
+#### 2. 不同数据对比
 
  `==` 相等， `!=` 不相等， `>` 大于， `>=` 大于等于， `<` 小于， `<=` 小于等于，不同数据类型可以转换
 
@@ -167,7 +167,7 @@ var anotherObject = {
 };
 ```
 
-**1. 访问对象 property**
+#### 1. 访问对象 property
 
 - 两种方式， `.` 和 `[]`
 - **一般都用方括号 [ ]**
@@ -237,13 +237,13 @@ var ourPets = [
 ]; 
 ourPets[0].names[1];  // returns "Fluffy"
 ourPets[1].names[0];  // returns "Spot"
-
 ```
-**2. 编辑对象里的属性和值**
 
-**2.1 更改 property 里的值**
+#### 2. 编辑对象里的属性和值
 
-```javascript
+2.1 更改 property 里的值
+
+```javas
 var myDog = {
   "name": "Coder", 
   "legs": 4, 
@@ -255,7 +255,7 @@ myDog.name = "Happy Coder";  // Coder 被改成了 Happy Coder
 myDog["name"] = "Happy Coder"; // 这个跟上面的都可以
 ```
 
-**2.2 增减 property**
+2.2 增减 property
 
  `delete` 
 
@@ -270,7 +270,7 @@ var ourDog = {
 ourDog.bark = "bow-wow";  // 新增属性
 delete ourDog.friends; // 减去属性
 ```
-**3. 查找值**
+#### 3. 查找值
 
  `lookup` 
 
@@ -293,7 +293,7 @@ function phoneticLookup(val) {
 
 phoneticLookup("charlie");
 ```
-**3.1 查找是否有特定的 property**
+3.1 查找是否有特定的 property
 
  `.hasOwnProperty()` 
 
@@ -317,7 +317,7 @@ function checkObj(obj, checkProp) {
 }
 ```
 
-**3.2 用循环和 if 查找对象里的值**
+3.2 用循环和 if 查找对象里的值
 
 ```js
 // 四个对象
@@ -365,7 +365,7 @@ function lookUpProfile(name, prop) {
 lookUpProfile("Akira", "likes");
 ```
 
-**4. 多个 objects 放一起**
+#### 4. 多个 objects 放一起
 
 ```javascript
 var myMusic = [
@@ -393,7 +393,7 @@ var myMusic = [
   }
 ];
 ```
-**5. JSON 层次结构**
+#### 5. JSON 层次结构
 
 ```javascript
 var collection = {
@@ -439,7 +439,7 @@ updateRecords(collection, 5439, 'artist', 'ABBA');
 
 ### 3.1. 条件控制
 
-**1.1 多种可能情况**
+#### 1. 多种可能情况
 
  `switch` 
 
@@ -475,7 +475,7 @@ switch(val) {
 caseInSwitch(1);
 ```
 
-**1.1.1 多个值一个输出**
+1.1 多个值一个输出
 
 ```javascript
 function sequentialSizes(val) {
@@ -497,13 +497,13 @@ function sequentialSizes(val) {
 
 sequentialSizes(1);
 ```
-**1.2 三元判断**
+#### 2. 三元判断
 
  `a ? b : c` 
 
 a 为条件，b 是判定是 `true` 的时候执行，c 是判定是 `false` 的时候执行。
 
-**1.2.1 判断单个条件**
+2.1 判断单个条件
 
 ```js
 function checkEqual(a, b) {
@@ -512,7 +512,7 @@ function checkEqual(a, b) {
 // 判定 a 与 b 是否绝对相等，如果相等显示"Equal"，不相等显示"Not Equal"
 checkEqual(1, 2);
 ```
-**1.2.2 判断多个条件**
+2.2 判断多个条件
 
 ```js
 /* 写成 if else 的形式 */
@@ -537,8 +537,7 @@ function findGreaterOrEqual(a, b) {
 
 ```
 
-
-### 3.2. 循环迭代
+#### 3. 循环迭代
 
  `while` 
  `do...while...` 
@@ -620,7 +619,7 @@ multiplyAll([[1, 2], [3, 4], [5, 6, 7]]);
 //           product = product * arr[0][2] ...
 ```
 
-### 3.3. 递归
+### 3.2 递归
 
 - 递归的核心是自己运算
 - 加法的第一位都是 0，乘法的第一位都是 1
@@ -694,9 +693,9 @@ function rangeOfNumbers(startNum, endNum) {
 
 ```
 
-### 3.4. 整数、小数
+### 3.3. 整数、小数
 
-**1. 随意给小数值**
+#### 1. 随意给小数值
 
  `Math.random()` 0 到 1 中间的小数值
 
@@ -709,7 +708,7 @@ while (result === 0) {
 }
   return result;
 ```
-**2. 随意给整数值**
+#### 2. 随意给整数值
 
 - `Math.floor()` 0 到 19 的整数
 
@@ -732,7 +731,9 @@ return Math.floor(Math.random() * (myMax - myMin + 1)) + myMin;
 }
 ```
 
-**2.1 字符串转成整数**
+
+
+2.1 字符串转成整数
 
  `parseInt()` 
 
@@ -748,7 +749,9 @@ function convertToInteger(str) {
 convertToInteger("56");
 ```
 
-**2.2 计算基数 radix**
+
+
+2.2 计算基数 radix
 
  `parseInt(string, radix);` 
 
@@ -789,7 +792,7 @@ var myArray = ["Katelyn", 25];
 var myArray = [["Katelyn", 25], ["Kate", 30]];
 ```
 
-**1.1 多值内索引**
+1.1 多值内索引
 
  `变量名 [N]` 从 0 开始
 
@@ -811,7 +814,7 @@ arr[3][0]; // equals [10, 11, 12]
 arr[3][0][1]; // equals 11
 ```
 
-**1.2 修改变量里的值**
+1.2 修改变量里的值
 
  `变量名 [N] =` 
 
@@ -820,7 +823,7 @@ var ourArray = [50, 40, 30];
 ourArray[0] = 15; // equals [15, 40, 30]
 ```
 
-**1.3 开始及结尾加值**
+1.3 开始及结尾加值
 
  `.unshift()` 开始
 
@@ -843,7 +846,7 @@ arr2.push(["happy", "joy"]);
 // arr2 now equals ["Stimpson", "J", "cat", ["happy", "joy"]
 ```
 
-**1.4 消除首值和尾值**
+1.4 消除首值和尾值
 
  `.shift()` 消除首值，新变量=消除的值，原变量=消除后的值
 
@@ -856,9 +859,9 @@ console.log(oneDown); // Returns 6
 console.log(threeArr); // Returns [1, 4], 被.pop 消除了结尾值 6
 ```
 
-### 4.2. 乱 赋值
+### 4.2. 乱赋值
 
-**1. Shopping List**
+1. Shopping List
 
 变量 `myList` 
 
@@ -883,7 +886,7 @@ var myList = [
 
 #### 4.3.1. 数值赋值
 
-**1. 赋值初始值**
+1. 赋值初始值
 
 ```javascript
 var myVar = 0;
@@ -894,14 +897,14 @@ var product = 8 * 10;
 var quotient = 66 / 33;
 ```
 
-**2. 快捷运算**
+2. 快捷运算
 
 | 代码   | 意思         |
 | ------ | ------------ |
 | `i++;` | `i = i + 1;` |
 | `i--;` | `i = i - 1;` |
 
-**3. 运算符号**
+3. 运算符号
 
 | 符号 | 运算方式 | 例子         | 备注             |
 | ---- | -------- | ------------ | ---------------- |
@@ -911,7 +914,7 @@ var quotient = 66 / 33;
 
 > 17 - 2\*2*2\*2 = 1
 
-**4. 加减乘除复合赋值**
+4. 加减乘除复合赋值
 
  `+=`  `-=`  `*=`  `/=` 
 
@@ -935,7 +938,7 @@ var myFirstName = "Katelyn"
 var myLastName = "Lee"
 ```
 
-**1. 转义字符 escape character**
+1. 转义字符 escape character
 
 - 使用目的
 
@@ -953,7 +956,7 @@ var myLastName = "Lee"
 | `\b` | word boundary |      |
 | `\f` | form feed     |      |
 
-**2. 字符串连接**
+2. 字符串连接
 
 ```javascript
 // 用 `+` 号
@@ -977,7 +980,7 @@ ourStr += anAdjective;
 
 > 注意空格，需要自己加空格。
 
-**3. 计算字符串长度**
+3. 计算字符串长度
 
  `变量名.length` 
 
@@ -987,7 +990,7 @@ var lastName = "Lovelace";
 lastNameLength = lastName.length;
 ```
 
-**4. 变量字符索引**
+4. 变量字符索引
 
  `变量名 [N]` 
 
@@ -1011,7 +1014,7 @@ var lastLetter = firstName[firstName.length - 1];
 // Returns "s"
 ```
 
-**5. 赋值改变**
+5. 赋值改变
 
 ```javascript
 var myStr = "Bob";
@@ -1040,7 +1043,7 @@ myFun();
 
 ```
 
-**1. 函数里的参数 argument**
+1. 函数里的参数 argument
 
 创建两个当占位符的参数，在赋予值 (*arguments*)
 
@@ -1052,7 +1055,7 @@ function functionWithArgs(one, two) { // one 和 two 是当占位符的参数
 }
 functionWithArgs(6, 16);  // 赋予两个值，一个 6，一个 16
 ```
-**2. 作用域 scope**
+2. 作用域 scope
 
 - 在 `function` 外的变量，JS 随处可见，称为*Global scope*
 - 在 `function` 内的变量，只有在那个 `function` 里才能见，称为*local scope*
@@ -1067,7 +1070,7 @@ myTest(); // logs "foo"
 console.log(loc); // loc is undefined
 ```
 
-- **优先级**
+- 优先级
 
  `local` 比 `global` 优先级高
 
@@ -1078,7 +1081,7 @@ function myFun() {
   return someVar; // Returns "Head"
 }
 ```
-**3. 返回值**
+3. 返回值
 
  `return` 
 
@@ -1097,7 +1100,7 @@ function processArg(num) {
 processed = processArg(7); // 此行，用返回值赋值
 ```
 
-**4. 一连串的值 line**
+4. 一连串的值 line
 
  `arr` 是数组， `item` 是数值
 
@@ -1117,7 +1120,7 @@ console.log(nextInLine(testArr, 6));
 console.log("After: " + JSON.stringify(testArr));
 ```
 
-**5. 对比大小**
+5. 对比大小
 
 ```javascript
 function isLess(a, b) {
@@ -1132,7 +1135,8 @@ isLess(15, 10);  // return false
 
 1. 函数需要 `return` ， `return` 后 `answer` 才有函数结果。
 2. `console log` 是给网页控制台输出信息的，类似 `print` .  弹窗为 `alert` .
-3. 
+
+   
 
 ## 7. 专业词汇
 
