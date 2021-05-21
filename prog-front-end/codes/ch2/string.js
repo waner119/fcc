@@ -5,4 +5,14 @@ function testLogicalAnd(val) {
   return "No";
 }
 
-console.log("🚀 ~ testLogicalAnd(15)", testLogicalAnd(15));
+console.log(testLogicalAnd(15));
+console.log(
+  "🚀 ---------------------------------------------------------------------"
+);
+console.log(
+  "🚀 ~ console.log(testLogicalAnd(15))",
+  console.log(testLogicalAnd(15))
+);
+console.log(
+  "🚀 ---------------------------------------------------------------------"
+);
