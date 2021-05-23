@@ -5,5 +5,4 @@ function testLogicalAnd(val) {
   return "No";
 }
 
-  "🚀 ---------------------------------------------------------------------"
 console.log("🚀 ~ (testLogicalAnd(15)", testLogicalAnd(15));
