@@ -66,12 +66,12 @@ def index():
 # 绑定动态地址
 @app.route('/greet/<name>')
 def greet(name):
-  return '<h1>Hello, World! </h1>' % name
+  return '<h1>Hello, World!</h1>' % name
 
 # 设置默认值
 @app.route('/greet', defaults= {'name':'Programmer'}) 
 @app.route('/greet/<name>') 
-def greet(narne): 
+def greet(name): 
   return '<h1>Hello, World!</h1>' % name
 ```
 
@@ -143,7 +143,7 @@ app.config.update(
 HTTP/1.1 指示使用的 HTTP 协议版本是 1.1，有如下方法；
 
 | 请求方式 | 作用         | 备注                |
-|----------|------------|---------------------|
+| -------- | ------------ | ------------------- |
 | GET      | 获取资源     | 多用于搜索引擎      |
 | POST     | 数据交互     | 多用于爬虫          |
 | PUT      | 存储并覆盖   | 多用于传输文件      |
@@ -165,7 +165,7 @@ def hello():
 # 整型转换器
 @app.route('goback/<int:year>') 
 def go_back(year):
-  return '<p>Welcome to %d !</p>' % (2018 - year)
+  return f'<p>Welcome to {(2018 - year)} !</p>'
 
 # any 转换器
 # 如果将 color 替换为 any 转换器中设置的可选值以外的任意字符，均会获得 404 错误响应。
@@ -175,7 +175,7 @@ def three_colors(color):
 
 # any 转换器，列表形式
 colors = ['blue', 'white', 'red']
-@app.route('/colors/<any(%s):color>' % str(colors)[1:-1])
+@app.route(f'/colors/<any({str(colors)[1:-1]}):color>')
 ```
 
 ### 3.3. 请求钩子
@@ -200,7 +200,7 @@ colors = ['blue', 'white', 'red']
 - 请求数据
 
 | 条目                    | 作用                                         |
-|-------------------------|--------------------------------------------|
+| ----------------------- | -------------------------------------------- |
 | Host                    | 对应网址 URL 中的 Web 名称和端口号           |
 | Connection              | 表示客户端与服务连接类型                     |
 | Upgrade-Insecure-请求 s | 加载 HTTP 资源时自动替换成 HTTPS 请求        |
@@ -226,13 +226,13 @@ colors = ['blue', 'white', 'red']
 
 - 状态码
 
-| 状态码 | 信息类别   | 解释                               |
-|--------|----------|----------------------------------|
-| 1xx    | 消息       | 请求已被服务器接收，继续处理        |
+| 状态码 | 信息类别   | 解释                                 |
+| ------ | ---------- | ------------------------------------ |
+| 1xx    | 消息       | 请求已被服务器接收，继续处理         |
 | 2xx    | 成功       | 请求已成功被服务器接收、理解、并接受 |
-| 3xx    | 重定向     | 需要后续操作才能完成这一请求       |
-| 4xx    | 请求错误   | 请求含有词法错误或者无法被执行     |
-| 5xx    | 服务器错误 | 服务器在处理某个正确请求时发生错误 |
+| 3xx    | 重定向     | 需要后续操作才能完成这一请求         |
+| 4xx    | 请求错误   | 请求含有词法错误或者无法被执行       |
+| 5xx    | 服务器错误 | 服务器在处理某个正确请求时发生错误   |
 
 ### 4.1. 响应方法
 
@@ -279,17 +279,17 @@ def foo():
       })
 ```
 
-| 条目              | 作用                                            |
-|-------------------|-------------------------------------------------|
+| 条目              | 作用                                             |
+| ----------------- | ------------------------------------------------ |
 | Cache-Control     | 这个值告诉客户端，服务端不希望客户端缓存资源     |
-| Connection        | keep-alive                                      |
-| Content-Encoding  | 服务端发送的资源使用的编码                      |
+| Connection        | keep-alive                                       |
+| Content-Encoding  | 服务端发送的资源使用的编码                       |
 | Content-Type      | 资源文件的类型，还有字符编码                     |
-| Date              | 服务端发送资源时的服务器时间                    |
+| Date              | 服务端发送资源时的服务器时间                     |
 | Expires           | 在这个时间前，以直接访问缓存副本                 |
-| Pragma: no-cache  | 含义与 Cache-Control 等同                       |
-| Server            | 服务器和相对应的版本                            |
-| Transfer-Encoding | 服务器发送的资源的方式                          |
+| Pragma: no-cache  | 含义与 Cache-Control 等同                        |
+| Server            | 服务器和相对应的版本                             |
+| Transfer-Encoding | 服务器发送的资源的方式                           |
 | Vary              | 告诉缓存服务器，缓存压缩文件和非压缩文件两个版本 |
 
 ### 4.3. Cookie
