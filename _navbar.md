@@ -1,3 +1,2 @@
 * [首页](/)
-* [前端](/prog-front-end/)
-* [Python 网络编程](/prog-pyweb/)
+* [前端](front-end)
